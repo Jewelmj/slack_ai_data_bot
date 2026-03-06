@@ -1,14 +1,11 @@
-from apps.llm.sql_generator import generate_sql
-from apps.database.postgres import run_query
+from app.pipeline.query_pipeline import run_data_query
 
 question = "show revenue by region for 2025-09-01"
 
-sql = generate_sql(question)
+response = run_data_query(question)
 
 print("Generated SQL:")
-print(sql)
+print(response["sql"])
 
-results = run_query(sql)
-
-print("\nQuery Results:")
-print(results)
+print("\nResults:")
+print(response["results"])

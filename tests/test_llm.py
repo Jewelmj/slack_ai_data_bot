@@ -1,4 +1,4 @@
-from apps.llm.sql_generator import generate_sql
+from app.llm.sql_generator import generate_sql
 
 question = "show revenue by region for 2025-09-01"
 
